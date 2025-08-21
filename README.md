@@ -1,34 +1,32 @@
-# IChing API
+# IChing-API 🌀
 
-API para consultas del I Ching (Libro de las Mutaciones) construida con FastAPI.
+Una API moderna y elegante para consultar el I Ching (Libro de las Mutaciones), construida con FastAPI y Python. Ofrece un oráculo digital que genera hexagramas y sus interpretaciones según la tradición milenaria china.
 
-## Características
+## Características principales
 
-- Consultas al oráculo con generación aleatoria de hexagramas
-- Información completa de los 64 hexagramas
-- Documentación automática con Swagger UI
-- Preparada para despliegue en producción
+- **Consultas al oráculo**: Genera hexagramas mediante el método tradicional de monedas
+- **64 Hexagramas completos**: Información detallada de todos los hexagramas del I Ching
+- **API RESTful**: Interfaz moderna y bien documentada
+- **Interpretaciones auténticas**: Textos originales traducidos al español
+- **Open Source**: Código abierto para la comunidad espiritual y tecnológica
 
-## Instalación
+## Tecnologías utilizadas
 
-1. Clona el repositorio
-2. Instala las dependencias: `pip install -r requirements.txt`
-3. Ejecuta la aplicación: `uvicorn app.main:app --reload`
+- **FastAPI** - Framework moderno y rápido para APIs con Python
+- **Python 3.9+** - Lenguaje de programación principal
+- **Pydantic** - Validación de datos y settings management
+- **Uvicorn** - Servidor ASGI de alto rendimiento
+- **Railway** - Plataforma de despliegue y hosting
 
-## Uso
+## Uso rápido
 
-Accede a la documentación en: http://localhost:8000/docs
+```bash
+# Obtener un hexagrama específico
+curl https://iching-api.railway.app/api/v1/hexagrams/1
 
-### Endpoints principales
-
-- `GET /` - Página de inicio
-- `GET /health` - Verificar estado del servicio
-- `GET /api/v1/hexagrams/{number}` - Obtener hexagrama por número
-- `POST /api/v1/consult` - Realizar consulta al oráculo
-
-## Despliegue con Docker
-
-1. Construye la imagen: `docker build -t iching-api .`
-2. Ejecuta el contenedor: `docker run -p 8000:8000 iching-api`
-
-O usa Docker Compose: `docker-compose up -d`
+# Consultar al oráculo
+curl -X POST https://iching-api.railway.app/api/v1/consult \
+  -H "Content-Type: application/json" \
+  -d '{"question":"¿Cuál es mi camino?"}'
+```
+# IChing-API
