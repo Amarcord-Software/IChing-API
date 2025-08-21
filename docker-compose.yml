@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  iching-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+    restart: unless-stopped
+
+  # Podrías agregar más servicios como una base de datos después
+  # db:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_DB: iching
+  #     POSTGRES_USER: iching_user
+  #     POSTGRES_PASSWORD: iching_password
